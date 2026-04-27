@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MoodBot</title>
+  <link rel="stylesheet" href="src/css/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">MB</div>
+        <div>
+          <h1>MoodBot</h1>
+          <p>Unhelpful, dramatic, occasionally useful.</p>
+        </div>
+      </div>
+
+      <section class="panel">
+        <h2>Personality</h2>
+        <label class="range-row">
+          Sass level
+          <input id="sassLevel" type="range" min="1" max="10" value="7" />
+        </label>
+        <label class="range-row">
+          Laziness
+          <input id="lazyLevel" type="range" min="1" max="10" value="5" />
+        </label>
+        <label class="toggle-row">
+          <input id="curseToggle" type="checkbox" checked />
+          Allow mild curse words
+        </label>
+      </section>
+
+      <section class="panel">
+        <h2>Controls</h2>
+        <button id="clearChat" class="secondary-btn">Clear chat</button>
+        <button id="exportChat" class="secondary-btn">Export transcript</button>
+      </section>
+
+      <section class="panel note">
+        <h2>Behavior</h2>
+        <p>The bot may help, tease, complain, or reject requests when it feels lazy.</p>
+      </section>
+    </aside>
+
+    <main class="chat-area">
+      <header class="chat-header">
+        <div>
+          <h2>Chat</h2>
+          <p id="statusText">Mood: suspiciously awake</p>
+        </div>
+        <div class="mood-light" id="moodLight" title="Mood indicator"></div>
+      </header>
+
+      <section id="messages" class="messages" aria-live="polite"></section>
+
+      <form id="chatForm" class="composer">
+        <textarea
+          id="userInput"
+          placeholder="Ask MoodBot something..."
+          rows="1"
+          maxlength="1200"
+          autocomplete="off"
+        ></textarea>
+        <button id="sendButton" type="submit">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script type="module" src="src/js/app.js"></script>
+</body>
+</html>

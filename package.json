@@ -1,0 +1,9 @@
+{
+  "name": "moodbot",
+  "version": "1.0.0",
+  "description": "A moody, teasing chatbot UI built with HTML, CSS, and JavaScript.",
+  "private": true,
+  "scripts": {
+    "start": "python -m http.server 8080"
+  }
+}
